@@ -1,0 +1,212 @@
+/* Style sheet for Markdeep that corresponds closely to the default Latex article format
+   Put the following in your Markdeep document to use this:
+
+   <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/dark.css">
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed');
+:root {
+  /* Polar Night base elements like backgrounds  */
+  --nord0_polarnight0:#2e3440;
+  --nord1_polarnight1:#3b4252;
+  --nord2_polarnight2:#434c5e;
+  --nord3_polarnight3:#4c566a;
+  /* Snow Storm - text colors */
+  --nord4_snowstorm0:#d8dee9;
+  --nord5_snowstorm1:#e5e9f0;
+  --nord6_snowstorm2:#eceff4;
+  /* Frost - primary UI component and text highlighting */
+  --nord7_frost0:#8fbcbb;
+  --nord8_frost1:#88c0d0;
+  --nord9_frost2:#81a1c1;
+  --nord10_frost3:#5e81ac;
+  /* Aurora r tertiary UI elements that require more visual attention than default elements. */
+  --nord11_aurora0:#bf616a;
+  --nord12_aurora1:#d08770;
+  --nord13_aurora2:#ebcb8b;
+  --nord14_aurora3:#a3be8c;
+  --nord15_aurora4:#b48ead;
+  --BGCOL:#161616;
+  --TextCol:#EAEAEA;
+  --LinkCol2:#DEDBD6;
+  --LinkCol:#E85A4F;
+  --AccentCol:#E98074;
+}
+
+@media screen {
+  body {
+    background: var(--BGCOL);
+    color: var(--TextCol);
+    background-image: url("bg.png");
+    font-family: Montserrat, Arial;
+    text-align: left;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    margin-bottom: 32px;
+    margin-bottom: 32px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
+
+.heid{
+  position: absolute;
+  top: 0px;
+  display: block;
+  z-index: 12;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  left:0px;
+  width: 100%;
+  height: 2rem;
+}
+
+.spacerBig{
+      margin-top: 20rem;
+}
+.spacerSmall{
+      margin-top: 5rem;
+}
+
+.md .admonition {
+    position: relative;
+    margin: 1em 0;
+    margin-top: 5rem;
+    padding: .4rem 1rem;
+    border-radius: .2rem;
+/*    border-left: 2.5rem solid var(--nord1_polarnight1);
+    background-color: var(--nord3_polarnight3); */
+    border-left: 2.5rem solid rgb(0,0,0);
+    color: #FFFF;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    background-position: 100% 50%;
+    text-shadow: 0px 0px 7px #000;
+    filter: dropshadow(color=#000, offx=0, offy=0);
+}
+
+.md div.title {
+  color: var(--LinkCol);
+  font-size: 1100%;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-shadow: 0px 0px 7px #000;
+  filter: dropshadow(color=#000, offx=0, offy=0);
+  margin:0px;
+  padding: 0px;
+  line-height: 5rem;
+  padding-top: 3rem;
+}
+
+
+.md a:link, .md a:visited{
+  color: var(--AccentCol);
+}
+
+.md hr {
+  height: 0px;
+  border: none;
+  border-top: 0.1pt solid var(--nord4_snowstorm0);
+}
+
+.md small{
+  font-size: 80%;
+}
+
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md div.nonumberh1, .md div.nonumberh2,.md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+  color: var(--nord9_frost2);
+  border-color: var(--nord9_frost2);
+  font-size: 150%;
+  padding-bottom: 0px;
+}
+
+@media screen {
+  .md h1, .md h2, .md h3, .md h4, .md h5, .md h6, .md div.nonumberh1, .md div.nonumberh2,.md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+    background: -webkit-linear-gradient(#f9deae, #a87215);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--nord4_snowstorm0);
+  }
+}
+
+
+.md svg.diagram {
+  stroke: #ccc;
+  fill: #ccc;
+}
+
+.md svg.diagram .opendot {
+  fill: #3b4252;
+}
+
+.md .listing {
+  background: #111;
+}
+
+.md .tilde code {
+  color: #3b4252;
+}
+
+.md .backtick code {
+  color: #3b4252;
+}
+
+div.markdeepFooter, div.markdeepFooter a {
+  color: #bc9249 !important;
+}
+
+b, em.asterisk {
+    font-style: italic; font-weight: normal;
+}
+
+@media screen {
+    b, em.asterisk {
+        color: var(--LinkCol);
+    }
+}
+
+a em.asterisk {
+    color: var(--LinkCol);
+}
+
+.md li {
+    text-align: left;
+    text-indent: 0;
+}
+
+.md h2, .md .nonumberh2 {
+    font-size: 125%
+}
+.md h3, .md h4, .md h5, .md h6, .md div.nonumberh3, .md div.nonumberh4, .md div.nonumberh5, .md div.nonumberh6 {
+    font-size: 115%
+}
+
+@media screen {
+    .md table.table td {
+        border: 1px solid #513302;
+    }
+
+    .md table.table th {
+        background: #af730c;
+        background: -webkit-linear-gradient(#d3a658, #af730c);
+        border: none;
+    }
+
+    .md table.table th:last-child {
+        border-right: 1px solid #845509;
+    }
+
+    .md table.table tr:nth-child(even) {
+        background-color: #231601;
+    }
+}
